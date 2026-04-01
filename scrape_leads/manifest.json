@@ -1,0 +1,83 @@
+{
+  "name": "scrape_leads",
+  "description": "Run the Apify lead scraper to find B2B contacts. Filter by company industry, keywords, and location; person location and job titles; and whether contacts have email or phone. Returns structured lead data.",
+  "entrypoint": "run.py",
+  "async": true,
+  "parameters": {
+    "company_industry_includes": {
+      "type": "string",
+      "description": "Comma-separated company industries to include (e.g. 'Telecommunications,Software')",
+      "required": false
+    },
+    "company_keyword_includes": {
+      "type": "string",
+      "description": "Comma-separated keywords that must appear in the company description (e.g. 'ivr,voip')",
+      "required": false
+    },
+    "company_location_country_excludes": {
+      "type": "string",
+      "description": "Comma-separated countries to exclude for company headquarters (e.g. 'United States,Canada')",
+      "required": false
+    },
+    "person_location_country_includes": {
+      "type": "string",
+      "description": "Comma-separated countries where the person must be located (e.g. 'United States,Canada')",
+      "required": false
+    },
+    "person_location_country_excludes": {
+      "type": "string",
+      "description": "Comma-separated countries to exclude for person location (e.g. 'India,Pakistan')",
+      "required": false
+    },
+    "person_location_state_includes": {
+      "type": "string",
+      "description": "Comma-separated US states where the person must be located (e.g. 'California,New York')",
+      "required": false
+    },
+    "person_location_state_excludes": {
+      "type": "string",
+      "description": "Comma-separated US states to exclude for person location (e.g. 'Texas,Florida')",
+      "required": false
+    },
+    "person_location_city_includes": {
+      "type": "string",
+      "description": "Comma-separated cities where the person must be located (e.g. 'New York,Los Angeles')",
+      "required": false
+    },
+    "person_location_city_excludes": {
+      "type": "string",
+      "description": "Comma-separated cities to exclude for person location (e.g. 'Dhaka,Mumbai')",
+      "required": false
+    },
+    "person_title_includes": {
+      "type": "string",
+      "description": "Comma-separated job titles to target. Values must exactly match the allowed list. Common values: 'Director', 'Manager', 'Founder', 'General Manager', 'Consultant', 'Chief Executive Officer', 'Co-Founder', 'Chief Operating Officer', 'Chief Technology Officer', 'Chief Marketing Officer', 'Chief Financial Officer', 'Founder & CEO', 'Founder And CEO', 'Co-Founder & CEO', 'CEO & Founder', 'CEO And Founder', 'CEO/Founder', 'Founder / CEO', 'Business Owner', 'Co Founder', 'Co-Owner', 'Business Manager', 'Executive Vice President', 'Executive Director', 'Associate Director', 'Assistant Director', 'Deputy Director', 'Director Of Finance', 'Director Of Sales', 'Director Of Marketing', 'Director Of Operations', 'Director Of Engineering', 'Director Of HR', 'Director Of IT', 'Director Of Technology', 'Director Of Business Development', 'Director Of Product', 'Director Of Product Management', 'Director Of Recruiting', 'Director Of Talent Acquisition', 'Director Of Training', 'Director Of Development', 'Director Of Digital Marketing', 'Director Of Communications', 'IT Director', 'HR Director', 'Finance Director', 'Commercial Director', 'Development Director', 'Business Development Director', 'IT Manager', 'HR Manager', 'Engineering Manager', 'Account Manager', 'Branch Manager', 'District Manager', 'General Manager', 'Area Manager', 'Country Manager', 'Department Manager', 'Inside Sales Manager', 'Event Manager', 'Logistics Manager', 'Maintenance Manager', 'Customer Service Manager', 'Customer Success Manager', 'Compliance Manager', 'Content Marketing Manager', 'Digital Marketing Manager', 'Business Development Manager', 'Human Resources Manager', 'Finance Manager', 'Accounting Manager'",
+      "required": false
+    },
+    "has_email": {
+      "type": "boolean",
+      "description": "Only return leads that have an email address (default: true)",
+      "required": false
+    },
+    "has_phone": {
+      "type": "boolean",
+      "description": "Only return leads that have a phone number (default: false)",
+      "required": false
+    },
+    "include_similar_titles": {
+      "type": "boolean",
+      "description": "Also include leads with job titles similar to those in person_title_includes (default: false)",
+      "required": false
+    },
+    "total_results": {
+      "type": "integer",
+      "description": "Maximum number of leads to return (default: 100)",
+      "required": false
+    },
+    "reset_saved_progress": {
+      "type": "boolean",
+      "description": "Reset the actor's saved pagination progress and start fresh (default: false)",
+      "required": false
+    }
+  }
+}
