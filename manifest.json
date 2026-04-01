@@ -1,10 +1,10 @@
 {
   "name": "leads-scraper",
   "description": "Generate B2B leads using Apify's lead scraper (Apollo, ZoomInfo, Lusha). Filter by company industry, keywords, location, job titles, and contact info availability.",
-  "instructions": "Set your Apify API token (found at https://console.apify.com/account/integrations) in config.json as 'apify_api_token'.",
+  "instructions": "Set your Apify API key (found at https://console.apify.com/account/integrations) in config.json as 'apify_api_key'.",
   "config": {
-    "apify_api_token": {
-      "description": "Your Apify API token (found at https://console.apify.com/account/integrations)",
+    "apify_api_key": {
+      "description": "Your Apify API key (found at https://console.apify.com/account/integrations)",
       "required": true
     }
   }

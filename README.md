@@ -9,7 +9,7 @@ A stavrobot plugin that generates B2B leads by running the [Apify `pipelinelabs/
 
 ```json
 {
-  "apify_api_token": "apify_api_XXXXXXXXXXXX"
+  "apify_api_key": "apify_api_XXXXXXXXXXXX"
 }
 ```
 
